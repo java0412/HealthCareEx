@@ -34,9 +34,9 @@
                     </tr>
                 </table>
             </div>
-            <h6>Hello Footer</h6>
-            <div class="card-footer bg-white text-success" th:if="${message!=null}">
-                <span th:text="${message}"></span>
+            <div th:if="${messages!=null}" class="card-footer bg-white text-info">
+                <span th:text="${messages}"></span>
+            </div>
                
             </div>
         </div>

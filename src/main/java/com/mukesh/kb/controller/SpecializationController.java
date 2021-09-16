@@ -46,7 +46,22 @@ public class SpecializationController {
 	@GetMapping("/delete")
 	public String deleteByID(@RequestParam Long id, RedirectAttributes attributes) {
 		service.removeSpecialization(id);
-		attributes.addAttribute("message", "Specialization with ID : "+id+" is removed");
+		attributes.addAttribute("messages", "Specialization with ID : "+id+" is removed");
+		return "redirect:all";
+	}
+	// Get edit page by id
+	@GetMapping("/edit")
+	public String editById(@RequestParam Long id, Model model) {
+		Specialization spec = service.getOneSpecialization(id);
+		model.addAttribute("spec", spec);
+		return "SpecializationEdit";
+	}
+	
+	// Update spec 
+	@PostMapping("/update")
+	public String updateSpecialization(@ModelAttribute Specialization spec, RedirectAttributes attributes) {
+		service.updateSpecialization(spec);
+		attributes.addAttribute("messages", "Specialization with Id : "+spec.getId()+" is updated");
 		return "redirect:all";
 	}
 
