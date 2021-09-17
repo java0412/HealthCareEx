@@ -15,5 +15,9 @@ public interface SpecializationService {
 	public Specialization getOneSpecialization(Long id);
 	
 	public void updateSpecialization(Specialization spec);
+	
+	public boolean getSpecCodeCount(String specCode);
+	
+	public boolean getSpecNameCount(String specName);
 
 }

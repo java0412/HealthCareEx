@@ -42,9 +42,16 @@ public class SpecializationServiceImpl implements SpecializationService {
 
 	@Override
 	public void updateSpecialization(Specialization spec) {
-		
 		repo.save(spec);
-
+	}
+	
+	@Override
+	public boolean getSpecCodeCount(String specCode) {
+		return repo.getSpecCodeCount(specCode)>0;
+	}
+	@Override
+	public boolean getSpecNameCount(String specName) {
+		return repo.getSpecNameCount(specName)>0;
 	}
 
 }
