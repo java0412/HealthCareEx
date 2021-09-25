@@ -27,6 +27,7 @@ public class SpecializationController {
 	public String showRegisterPage() {
 		return "SpecializationRegister";
 	}
+	// It will save form data to database
 	//2  On submit save form
 	@PostMapping("/save")
 	public String saveForm(@ModelAttribute Specialization spec, Model model) {
